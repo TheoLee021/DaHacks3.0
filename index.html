@@ -110,12 +110,14 @@
         }
 
         // Initialize the collector
+        let collectorAltitude = 2000000;
         const collector = {
             entity: viewer.entities.add({
-                position: Cesium.Cartesian3.fromDegrees(0, 0, 2000000), // Initial collector position
+                position: Cesium.Cartesian3.fromDegrees(0, 0, collectorAltitude), // Initial collector position
                 point: { pixelSize: 10, color: Cesium.Color.GREEN }
             }),
             speed: 2, // Movement speed of the collector
+            altitudeChange: 50000 // Change in altitude per key press
         };
 
         // Move the collector using arrow key inputs
@@ -129,9 +131,11 @@
                 case 'ArrowDown': lat -= collector.speed; break;
                 case 'ArrowLeft': lon -= collector.speed; break;
                 case 'ArrowRight': lon += collector.speed; break;
+                case 'w': collectorAltitude += collector.altitudeChange; break;
+                case 's': collectorAltitude = Math.max(0, collectorAltitude - collector.altitudeChange); break;
             }
 
-            collector.entity.position = Cesium.Cartesian3.fromDegrees(lon, lat, 700000);
+            collector.entity.position = Cesium.Cartesian3.fromDegrees(lon, lat, collectorAltitude);
         });
 
         // Detect collisions between the collector and debris, and remove collected debris
