@@ -40,7 +40,7 @@ let collectedCount = 0;
 let debris = [];
 const Gconst = 6.674e-11;
 const Mearth = 5.972e24;
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 300; i++) {
     const angle = Math.random() * 2 * Math.PI;
     const Leo = 160000  + Math.random()*2000000; //low earth orbit
     const Lvelocity = Math.sqrt((Gconst*Mearth)/Leo)
@@ -60,7 +60,7 @@ for (let i = 0; i < 50; i++) {
     });
 }
 
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 150; i++) {
     const angle = Math.random() * 2 * Math.PI;
     const Meo = 2000000 + Math.random()*(32786000); //MEO earth orbit
     const Mvelocity = Math.sqrt((Gconst*Mearth)/Meo)
