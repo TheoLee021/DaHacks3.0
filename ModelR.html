@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Control in HTML</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <script>
+        // Set up scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Set up lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+        scene.add(ambientLight);
+        const pointLight = new THREE.PointLight(0xffffff, 0.8);
+        camera.add(pointLight);
+        scene.add(camera);
+
+        // Camera position
+        camera.position.z = 5;
+
+        // Add OrbitControls for mouse control
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+        // Load a 3D model
+        let model;
+        const loader = new THREE.GLTFLoader();
+        loader.load(
+            'models/satellite.glb',  // Replace with the path to your 3D model file
+            (gltf) => {
+                model = gltf.scene;
+                scene.add(model);
+            },
+            undefined,
+            (error) => {
+                console.error('An error occurred while loading the model', error);
+            }
+        );
+
+        // Keyboard controls for moving the model
+        const keysPressed = {};
+        window.addEventListener('keydown', (event) => {
+            keysPressed[event.key] = true;
+        });
+
+        window.addEventListener('keyup', (event) => {
+            keysPressed[event.key] = false;
+        });
+
+        function moveModel() {
+            if (model) {
+                // Adjust these values for faster or slower movement
+                const moveSpeed = 0.05;
+                const rotateSpeed = 0.02;
+
+                // Move along X, Y, and Z axes
+                if (keysPressed['ArrowUp']) model.position.y += moveSpeed;    // Move up
+                if (keysPressed['ArrowDown']) model.position.y -= moveSpeed;  // Move down
+                if (keysPressed['ArrowLeft']) model.position.x -= moveSpeed;  // Move left
+                if (keysPressed['ArrowRight']) model.position.x += moveSpeed; // Move right
+
+                // Rotate the model
+                if (keysPressed['a']) model.rotation.y += rotateSpeed;        // Rotate left
+                if (keysPressed['d']) model.rotation.y -= rotateSpeed;        // Rotate right
+                if (keysPressed['w']) model.rotation.x += rotateSpeed;        // Rotate up
+                if (keysPressed['s']) model.rotation.x -= rotateSpeed;        // Rotate down
+            }
+        }
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            moveModel();
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Handle window resizing
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+    </script>
+</body>
+</html>
