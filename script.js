@@ -23,11 +23,12 @@
         for (let i = 0; i < 50; i++) {
             const angle = Math.random() * 2 * Math.PI;
             const Leo = 160000  + Math.random()*2000000; //low earth orbit
+            const Lvelocity = Math.sqrt((Gconst*Mearth)/Leo)
             // const Lvelocity = Math.sqrt((Gconst*Mearth)/Leo)
             debris.push({
                 angle: angle, // Random initial angle
                 radius: Leo, // Fixed altitude
-                speed: 0.01 + Math.random() * 0.02, // Random rotational speed
+                speed: Lvelocity*1e-6 + Math.random() * 0.0002, // Random rotational speed
                 inclination: Math.random() * 90 - 45, // Random inclination (-45° to 45°)
                 initialLon: Math.random() * 360 - 180, // Random initial longitude (-180° to 180°)
                 initialLat: Math.random() * 180 - 90, // Random initial latitude (-90° to 90°)
@@ -42,10 +43,11 @@
         for (let i = 0; i < 50; i++) {
             const angle = Math.random() * 2 * Math.PI;
             const Meo = 2000000 + Math.random()*(32786000); //MEO earth orbit
+            const Mvelocity = Math.sqrt((Gconst*Mearth)/Meo)
             debris.push({
                 angle: Math.random() * 2 * Math.PI, // Random initial angle
                 radius: Meo,
-                speed: 0.005 + Math.random() * 0.01, // Random rotational speed
+                speed: Mvelocity*1e-6 + Math.random() * 0.0002, // Random rotational speed
                 inclination: Math.random() * 90 - 45, // Random inclination (-45° to 45°)
                 initialLon: Math.random() * 360 - 180, // Random initial longitude (-180° to 180°)
                 initialLat: Math.random() * 180 - 90, // Random initial latitude (-90° to 90°)
@@ -60,10 +62,11 @@
         for (let i = 0; i < 50; i++) {
             const angle = Math.random() * 2 * Math.PI;
             const Heo = 35786000 + Math.random()*2000000; //HEO earth orbit
+            const Hvelocity = Math.sqrt((Gconst*Mearth)/Heo)
             debris.push({
                 angle: Math.random() * 2 * Math.PI, // Random initial angle
                 radius: Heo,
-                speed: 0.001 + Math.random() * 0.005, // Random rotational speed
+                speed: Hvelocity*1e-6 + Math.random() * 0.0002, // Random rotational speed
                 inclination: Math.random() * 90 - 45, // Random inclination (-45° to 45°)
                 initialLon: Math.random() * 360 - 180, // Random initial longitude (-180° to 180°)
                 initialLat: Math.random() * 180 - 90, // Random initial latitude (-90° to 90°)

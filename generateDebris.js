@@ -3,12 +3,14 @@ const fs = require('fs'); // 파일 시스템 모듈 사용
 // 우주 파편 데이터 생성 함수
 function generateDebrisData() {
     const debris = [];
+    const Gconst=6.674e-11
+    const Mearth= 5.972e24
 
     for (let i = 0; i < 50; i++) {
         const Leo = 160000 + Math.random() * 2000000; //MEO earth orbit
         const angle = Math.random() * 2 * Math.PI;
         const altitude = Leo; // LEO
-        const speed = (0.01 + Math.random() * 0.02).toFixed(3); // 속도
+        const Lvelocity = (Math.sqrt((Gconst*Mearth)/Leo)  + Math.random() * 0.02).toFixed(3); // 속도
         const inclination = (Math.random() * 90 - 45).toFixed(2); // 경사각 (-45 ~ 45)
         const lon = (Math.random() * 360 - 180).toFixed(2); // 경도 (-180 ~ 180)
         const lat = (Math.random() * 180 - 90).toFixed(2); // 위도 (-90 ~ 90)
@@ -18,7 +20,7 @@ function generateDebrisData() {
             altitude: altitude.toFixed(2),
             latitude: lat,
             longitude: lon,
-            speed: speed,
+            speed: Lvelocity,
             inclination: inclination,
         });
     }
@@ -27,7 +29,7 @@ function generateDebrisData() {
         const Meo = 2000000 + Math.random()*(32786000); //MEO earth orbit
         const angle = Math.random() * 2 * Math.PI;
         const altitude = Meo; // Meo
-        const speed = (0.005 + Math.random() * 0.01).toFixed(3); // 속도
+        const Mvelocity = (Math.sqrt((Gconst*Mearth)/Meo)  + Math.random() * 0.01).toFixed(3); // 속도
         const inclination = (Math.random() * 90 - 45).toFixed(2); // 경사각 (-45 ~ 45)
         const lon = (Math.random() * 360 - 180).toFixed(2); // 경도 (-180 ~ 180)
         const lat = (Math.random() * 180 - 90).toFixed(2); // 위도 (-90 ~ 90)
@@ -37,7 +39,7 @@ function generateDebrisData() {
             altitude: altitude.toFixed(2),
             latitude: lat,
             longitude: lon,
-            speed: speed,
+            speed: Mvelocity,
             inclination: inclination,
         });
     }
@@ -46,7 +48,7 @@ function generateDebrisData() {
         const Heo = 35786000 + Math.random()*2000000; // HEO earth orbit
         const angle = Math.random() * 2 * Math.PI;
         const altitude = Heo; // Meo
-        const speed = (0.001 + Math.random() * 0.005).toFixed(3); // 속도
+        const Hvelocity = (Math.sqrt((Gconst*Mearth)/Heo) + Math.random() * 0.005).toFixed(3); // 속도
         const inclination = (Math.random() * 90 - 45).toFixed(2); // 경사각 (-45 ~ 45)
         const lon = (Math.random() * 360 - 180).toFixed(2); // 경도 (-180 ~ 180)
         const lat = (Math.random() * 180 - 90).toFixed(2); // 위도 (-90 ~ 90)
@@ -56,7 +58,7 @@ function generateDebrisData() {
             altitude: altitude.toFixed(2),
             latitude: lat,
             longitude: lon,
-            speed: speed,
+            speed: Hvelocity,
             inclination: inclination,
         });
     }
