@@ -34,19 +34,52 @@
 
         // Generate 10 pieces of space debris with random initial positions and speeds
         const debris = [];
+        const Gconst=6.674e-11
+        const Mearth= 5.972e24
         for (let i = 0; i < 50; i++) {
             const angle = Math.random() * 2 * Math.PI; // Random initial angle
+            const Leo= 160000  + Math.random()*2000000 //low earth orbit
+            const Lvelocity = Math.sqrt((Gconst*Mearth)/Leo)
             debris.push({
                 angle: angle, // Current angle of rotation
-                radius: 700000 + Math.random() * 500000, // Distance from Earth's surface (altitude)
-                speed: 0.01 + Math.random() * 0.02, // Speed of rotation
+                radius: Leo , // Distance from Earth's surface (altitude)
+                speed : Lvelocity*1e-7 + Math.random()*0.0002, // Speed of rotation 10^7 times less than real life
                 entity: viewer.entities.add({
-                    position: Cesium.Cartesian3.fromDegrees(0, 0, 700000), // Temporary initial position
+                    position: Cesium.Cartesian3.fromDegrees(0, 0, Leo), // Temporary initial position
                     point: { pixelSize: 5, color: Cesium.Color.GRAY } // Visual properties of the debris
                 })
             });
         }
 
+        for (let i = 0; i < 25; i++) { // Medium earth orbit
+            const angle = Math.random() * 2 * Math.PI; // Random initial angle
+            const Meo= 2000000  + Math.random()*(32786000 ) //MEO earth orbit
+            const Mvelocity = Math.sqrt((Gconst*Mearth)/Meo)
+            debris.push({
+                angle: angle, // Current angle of rotation
+                radius: Meo , // Distance from Earth's surface (altitude)
+                speed : Mvelocity*1e-7 + Math.random()*0.0002, // Speed of rotation 10^7 times less than real life
+                entity: viewer.entities.add({
+                    position: Cesium.Cartesian3.fromDegrees(0, 0, Meo), // Temporary initial position
+                    point: { pixelSize: 5, color: Cesium.Color.BLUE } // Visual properties of the debris
+                })
+            });
+        }
+
+        for (let i = 0; i < 12; i++) { //High eath orbit
+            const angle = Math.random() * 2 * Math.PI; // Random initial angle
+            const Heo= 35786000 + Math.random()*2000000 //HEO earth orbit
+            const Hvelocity = Math.sqrt((Gconst*Mearth)/Heo)
+            debris.push({
+                angle: angle, // Current angle of rotation
+                radius: Heo , // Distance from Earth's surface (altitude)
+                speed : Hvelocity*1e-7 + Math.random()*0.0002, // Speed of rotation 10^7 times less than real life
+                entity: viewer.entities.add({
+                    position: Cesium.Cartesian3.fromDegrees(0, 0, Heo), // Temporary initial position
+                    point: { pixelSize: 5, color: Cesium.Color.RED } // Visual properties of the debris
+                })
+            });
+        }
         // Animation loop to update the position of each debris object
         function animateDebris() {
             const time = Cesium.JulianDate.now(); // Get current time for consistent updates
