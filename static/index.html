@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Astro Sweep - Space Debris Monitoring System</title>
+    <title>Astro Sweep - Space Debris Cleaning Simulator</title>
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Cesium.js"></script>
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
@@ -10,19 +10,20 @@
 <body>
     <header>
         <div id="score">Collected: 0</div>
-        <h1>Astro Sweep - Space Debris Monitoring System</h1>
+        <h1>Astro Sweep - Space Debris Cleaning Simulator</h1>
         <div class="header__column">
             <i class="fa-solid fa-bars fa-xl" id="hamburgerIcon"></i>
         <nav id="dropdownMenu" class="hidden">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="info.html">Info</a></li>
+                <li><a href="info.html">Project Info</a></li>
+                <li><a href="https://discord.gg/rss8p6dP" target="_blank">Discord</a></li>
             </ul>
         </nav>
     </header>
 
     <div id="cesiumContainer"></div>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script src="https://kit.fontawesome.com/b3f4de9307.js" 
     crossorigin="anonymous"
     ></script>
