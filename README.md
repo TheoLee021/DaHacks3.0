@@ -15,7 +15,7 @@ https://github.com/user-attachments/assets/84ad9bdb-3889-46cb-9731-339b7f89d442
 
 ## 📖 Project Overview
 
-Astro Sweep is a prototype program designed as a simulation game concept to raise public awareness about space debris problems and explore practical solutions. The space debris issue is a complex and serious problem, but it remains a challenge without clear solutions. This project aims to make this issue more accessible and understandable through the medium of gaming.
+Astro Sweep is a prototype web application designed as a simulation game concept to raise public awareness about space debris problems and explore practical solutions. The space debris issue is a complex and serious problem, but it remains a challenge without clear solutions. This project aims to make this issue more accessible and understandable through the medium of gaming.
 
 ## ✨ Key Features
 
