@@ -1,159 +1,161 @@
 # Astro Sweep - Space Debris Cleaning Simulator
 
-> 우주 파편 청소 시뮬레이터 게임으로 우주 환경 문제에 대한 인식 제고를 위한 교육용 웹 애플리케이션
+**Languages**: [🇺🇸 English](README.md) | [🇰🇷 한국어](README_KR.md)
+
+> An interactive 3D simulation game prototype designed to raise awareness about space debris issues and explore potential solutions
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![Flask](https://img.shields.io/badge/Flask-Latest-green)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)
 ![CesiumJS](https://img.shields.io/badge/CesiumJS-1.104-red)
 
-## 📖 프로젝트 개요
+## 📖 Project Overview
 
-Astro Sweep는 우주 파편(Space Debris) 문제를 일반 대중에게 쉽고 재미있게 알리고 실제 솔루션을 찾기 위한 시뮬레이션 게임을 컨셉으로 만든 프로토 타입 프로그램입니다. 우주 파편 문제는 복잡하고 심각한 문제이지만 아직 뚜렷한 해결책이 없는 난제입니다. 이 프로젝트는 게임이라는 매체를 통해 이 문제를 더 접근 가능하고 이해하기 쉽게 만들고자 합니다.
+Astro Sweep is a prototype program designed as a simulation game concept to raise public awareness about space debris problems and explore practical solutions. The space debris issue is a complex and serious problem, but it remains a challenge without clear solutions. This project aims to make this issue more accessible and understandable through the medium of gaming.
 
-## ✨ 주요 기능
+## ✨ Key Features
 
-- **3D 지구 시각화**: CesiumJS를 사용한 실시간 3D 지구 모델
-- **우주 파편 시뮬레이션**: 실제 궤도 역학을 기반으로 한 우주 파편 움직임
-- **대화형 수집 게임**: 키보드 컨트롤로 우주 파편을 수집하는 게임플레이
-- **다층 궤도 시스템**: LEO, MEO, HEO 궤도별 우주 파편 분포
-- **실시간 점수 시스템**: 수집한 우주 파편 개수 추적
-- **물리 기반 시뮬레이션**: 중력 상수와 지구 질량을 고려한 궤도 속도 계산
+- **3D Earth Visualization**: Real-time 3D Earth model using CesiumJS
+- **Space Debris Simulation**: Space debris movement based on actual orbital mechanics
+- **Interactive Collection Game**: Keyboard-controlled gameplay for collecting space debris
+- **Multi-layered Orbital System**: Space debris distribution across LEO, MEO, and HEO orbits
+- **Real-time Scoring System**: Tracking of collected space debris count
+- **Physics-based Simulation**: Orbital velocity calculations considering gravitational constants and Earth's mass
 
-## 🛠️ 기술 스택
+## 🛠️ Technology Stack
 
 ### Backend
 
-- **Flask**: Python 웹 프레임워크
-- **CSV**: 우주 파편 데이터 저장 및 관리
+- **Flask**: Python web framework
+- **CSV**: Space debris data storage and management
 
 ### Frontend
 
-- **CesiumJS 1.104**: 3D 지구 및 우주 시각화
-- **JavaScript (ES6+)**: 게임 로직 및 상호작용
-- **HTML5 & CSS3**: UI/UX 디자인
-- **Font Awesome**: 아이콘 시스템
+- **CesiumJS 1.104**: 3D Earth and space visualization
+- **JavaScript (ES6+)**: Game logic and interaction
+- **HTML5 & CSS3**: UI/UX design
+- **Font Awesome**: Icon system
 
 ### APIs
 
-- **ArcGIS MapServer**: 고해상도 위성 이미지 제공
-- **CesiumJS API**: 3D 시각화 및 엔티티 관리
+- **ArcGIS MapServer**: High-resolution satellite imagery
+- **CesiumJS API**: 3D visualization and entity management
 
-## 📁 프로젝트 구조
+## 📁 Project Structure
 
 ```
 DaHacks3.0/
-├── app.py                 # Flask 메인 애플리케이션
-├── generateDebris.js      # 우주 파편 데이터 생성 스크립트
+├── app.py                 # Flask main application
+├── generateDebris.js      # Space debris data generation script
 ├── data/
-│   └── debris.csv        # 우주 파편 데이터 파일
+│   └── debris.csv        # Space debris data file
 ├── models/
-│   └── satellite.glb     # 3D 모델 파일
+│   └── satellite.glb     # 3D model file
 └── static/
-    ├── index.html        # 메인 게임 페이지
-    ├── Info.html         # 프로젝트 정보 페이지
-    ├── script.js         # 게임 로직 및 CesiumJS 제어
-    └── styles.css        # 스타일시트
+    ├── index.html        # Main game page
+    ├── Info.html         # Project information page
+    ├── script.js         # Game logic and CesiumJS control
+    └── styles.css        # Stylesheet
 ```
 
-## 🚀 설치 및 실행
+## 🚀 Installation and Setup
 
-### 필수 요구사항
+### Prerequisites
 
 - Python 3.x
-- Node.js (우주 파편 데이터 생성용)
-- 모던 웹 브라우저 (WebGL 지원)
+- Node.js (for space debris data generation)
+- Modern web browser (WebGL support required)
 
-### 설치 과정
+### Installation Steps
 
-1. **프로젝트 클론**
+1. **Clone the Repository**
 
 ```bash
 git clone https://github.com/your-username/DaHacks3.0.git
 cd DaHacks3.0
 ```
 
-2. **Python 의존성 설치**
+2. **Install Python Dependencies**
 
 ```bash
 pip install flask
 ```
 
-3. **우주 파편 데이터 생성 (선택사항)**
+3. **Generate Space Debris Data (Optional)**
 
 ```bash
 node generateDebris.js
 ```
 
-4. **Flask 서버 실행**
+4. **Run Flask Server**
 
 ```bash
 python app.py
 ```
 
-5. **브라우저에서 접속**
+5. **Access in Browser**
 
 ```
 http://localhost:5000
 ```
 
-## 🎮 게임 조작법
+## 🎮 Game Controls
 
-| 키  | 기능                   |
-| --- | ---------------------- |
-| `↑` | 수집기를 북쪽으로 이동 |
-| `↓` | 수집기를 남쪽으로 이동 |
-| `←` | 수집기를 서쪽으로 이동 |
-| `→` | 수집기를 동쪽으로 이동 |
-| `W` | 수집기 고도 상승       |
-| `S` | 수집기 고도 하강       |
+| Key | Function                    |
+| --- | --------------------------- |
+| `↑` | Move collector northward    |
+| `↓` | Move collector southward    |
+| `←` | Move collector westward     |
+| `→` | Move collector eastward     |
+| `W` | Increase collector altitude |
+| `S` | Decrease collector altitude |
 
-## 🌌 우주 파편 분류
+## 🌌 Space Debris Classification
 
-게임에서는 세 가지 궤도 영역의 우주 파편을 시뮬레이션합니다:
+The game simulates space debris in three orbital regions:
 
-- **LEO (Low Earth Orbit)**: 160km - 2,160km 고도 (회색 점)
-- **MEO (Medium Earth Orbit)**: 2,000km - 35,786km 고도 (파란색 점)
-- **HEO/GEO (High Earth Orbit)**: 35,786km 이상 고도 (빨간색 점)
+- **LEO (Low Earth Orbit)**: 160km - 2,160km altitude (gray dots)
+- **MEO (Medium Earth Orbit)**: 2,000km - 35,786km altitude (blue dots)
+- **HEO/GEO (High Earth Orbit)**: Above 35,786km altitude (red dots)
 
-각 궤도의 우주 파편은 실제 물리학 법칙에 따라 계산된 속도로 움직입니다.
+Space debris in each orbit moves at velocities calculated according to real physics laws.
 
-## 📊 데이터 및 물리 모델
+## 📊 Data and Physics Model
 
-### 궤도 역학
+### Orbital Mechanics
 
-- 중력 상수: 6.674 × 10⁻¹¹ m³/kg⋅s²
-- 지구 질량: 5.972 × 10²⁴ kg
-- 궤도 속도: v = √(GM/r)
+- Gravitational constant: 6.674 × 10⁻¹¹ m³/kg⋅s²
+- Earth's mass: 5.972 × 10²⁴ kg
+- Orbital velocity: v = √(GM/r)
 
-### 우주 파편 데이터
+### Space Debris Data
 
-- 총 500개의 시뮬레이션된 우주 파편
-- LEO: 300개, MEO: 150개, HEO: 50개
-- 각 파편은 고유한 궤도 매개변수를 가짐
+- Total of 500 simulated space debris objects
+- LEO: 300 objects, MEO: 150 objects, HEO: 50 objects
+- Each debris has unique orbital parameters
 
-## 🤝 기여 방법
+## 🤝 Contributing
 
-1. 이 저장소를 Fork 하세요
-2. 새로운 기능 브랜치를 생성하세요 (`git checkout -b feature/새기능`)
-3. 변경사항을 커밋하세요 (`git commit -am '새 기능 추가'`)
-4. 브랜치에 Push 하세요 (`git push origin feature/새기능`)
-5. Pull Request를 생성하세요
+1. Fork this repository
+2. Create a new feature branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Create a Pull Request
 
-## 📝 라이선스
+## 📝 License
 
-이 프로젝트는 MIT 라이선스 하에 제공됩니다.
+This project is licensed under the MIT License.
 
-## 👥 팀 정보
+## 👥 Team Information
 
-**Five Hs Team** - DaHacks 3.0 해커톤 참가팀
+**Five Hs Team** - DaHacks 3.0 Hackathon Participants
 
-## 🔗 참고 링크
+## 🔗 References
 
-- [CesiumJS 공식 문서](https://cesium.com/platform/cesiumjs/)
+- [CesiumJS Official Documentation](https://cesium.com/platform/cesiumjs/)
 - [ArcGIS World Imagery](https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer)
-- [Discord 커뮤니티](https://discord.gg/rss8p6dP)
+- [Discord Community](https://discord.gg/rss8p6dP)
 
 ---
 
-_우주 파편 문제에 대한 인식을 높이고, 깨끗한 우주 환경을 위한 노력에 동참해 주세요! 🌍✨_
+_Help raise awareness about space debris issues and join efforts for a cleaner space environment! 🌍✨_
