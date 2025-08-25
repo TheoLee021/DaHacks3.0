@@ -13,11 +13,11 @@ https://github.com/user-attachments/assets/84ad9bdb-3889-46cb-9731-339b7f89d442
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)
 ![CesiumJS](https://img.shields.io/badge/CesiumJS-1.104-red)
 
-## 📖 Project Overview
+## Project Overview
 
 Astro Sweep is a prototype web application designed as a simulation game concept to raise public awareness about space debris problems and explore practical solutions. The space debris issue is a complex and serious problem, but it remains a challenge without clear solutions. This project aims to make this issue more accessible and understandable through the medium of gaming.
 
-## ✨ Key Features
+## Key Features
 
 - **3D Earth Visualization**: Real-time 3D Earth model using CesiumJS
 - **Space Debris Simulation**: Space debris movement based on actual orbital mechanics
@@ -26,7 +26,7 @@ Astro Sweep is a prototype web application designed as a simulation game concept
 - **Real-time Scoring System**: Tracking of collected space debris count
 - **Physics-based Simulation**: Orbital velocity calculations considering gravitational constants and Earth's mass
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Backend
 
@@ -45,7 +45,7 @@ Astro Sweep is a prototype web application designed as a simulation game concept
 - **ArcGIS MapServer**: High-resolution satellite imagery
 - **CesiumJS API**: 3D visualization and entity management
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 DaHacks3.0/
@@ -62,7 +62,7 @@ DaHacks3.0/
     └── styles.css        # Stylesheet
 ```
 
-## 🚀 Installation and Setup
+## Installation and Setup
 
 ### Prerequisites
 
@@ -103,7 +103,7 @@ python app.py
 http://localhost:5000
 ```
 
-## 🎮 Game Controls
+## Game Controls
 
 | Key | Function                    |
 | --- | --------------------------- |
@@ -114,7 +114,7 @@ http://localhost:5000
 | `W` | Increase collector altitude |
 | `S` | Decrease collector altitude |
 
-## 🌌 Space Debris Classification
+## Space Debris Classification
 
 The game simulates space debris in three orbital regions:
 
@@ -124,7 +124,7 @@ The game simulates space debris in three orbital regions:
 
 Space debris in each orbit moves at velocities calculated according to real physics laws.
 
-## 📊 Data and Physics Model
+## Data and Physics Model
 
 ### Orbital Mechanics
 
@@ -138,7 +138,7 @@ Space debris in each orbit moves at velocities calculated according to real phys
 - LEO: 300 objects, MEO: 150 objects, HEO: 50 objects
 - Each debris has unique orbital parameters
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork this repository
 2. Create a new feature branch (`git checkout -b feature/new-feature`)
@@ -146,15 +146,15 @@ Space debris in each orbit moves at velocities calculated according to real phys
 4. Push to the branch (`git push origin feature/new-feature`)
 5. Create a Pull Request
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License.
 
-## 👥 Team Information
+## Team Information
 
 **Five Hs Team** - DaHacks 3.0 Hackathon Participants
 
-## 🔗 References
+## References
 
 - [CesiumJS Official Documentation](https://cesium.com/platform/cesiumjs/)
 - [ArcGIS World Imagery](https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer)
