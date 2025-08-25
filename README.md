@@ -159,7 +159,3 @@ This project is licensed under the MIT License.
 - [CesiumJS Official Documentation](https://cesium.com/platform/cesiumjs/)
 - [ArcGIS World Imagery](https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer)
 - [Discord Community](https://discord.gg/rss8p6dP)
-
----
-
-_Help raise awareness about space debris issues and join efforts for a cleaner space environment! 🌍✨_
