@@ -4,7 +4,9 @@ https://github.com/user-attachments/assets/f7add45f-a907-49a0-b29c-b5c2c7928036
 
 https://github.com/user-attachments/assets/84ad9bdb-3889-46cb-9731-339b7f89d442
 
-![AstroSweep1-ezgif com-optimize](https://github.com/user-attachments/assets/daec60cd-f39e-4dd4-92e3-fcc343dfe53f)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/daec60cd-f39e-4dd4-92e3-fcc343dfe53f" width="1000"/>
+</p>
 
 **Languages**: [🇺🇸 English](README.md) | [🇰🇷 한국어](README_KR.md)
 
